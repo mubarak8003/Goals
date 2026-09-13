@@ -1,0 +1,6 @@
+{
+  "name": "Goal & Savings Tracker",
+  "description": "Mobile-first financial goal and savings tracker to manage targets, savings records, and visual progress.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
