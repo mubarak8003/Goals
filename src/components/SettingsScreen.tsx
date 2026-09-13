@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { UserSettings } from '../types';
-import { Moon, Sun, RotateCcw, ShieldCheck, Sparkles, Bell, Info } from 'lucide-react';
+import { Moon, Sun, RotateCcw, ShieldCheck, Sparkles, Bell, Info, Smartphone } from 'lucide-react';
 import { DeleteConfirmModal } from './DeleteConfirmModal';
+import { PWAInstallButton } from './PWAInstallButton';
 
 interface SettingsScreenProps {
   settings: UserSettings;
@@ -66,6 +67,19 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = ({
             />
           </button>
         </div>
+      </div>
+
+      {/* App Installation Section */}
+      <div
+        className={`rounded-3xl p-6 shadow-sm border ${
+          darkMode ? 'border-white/[0.08] bg-[#22303A]' : 'border-slate-200/80 bg-white'
+        }`}
+      >
+        <h3 className="font-heading text-base font-bold mb-3 flex items-center gap-2">
+          <Smartphone className="h-4 w-4 text-[#F5B041]" />
+          App Installation (PWA)
+        </h3>
+        <PWAInstallButton variant="settings" darkMode={darkMode} />
       </div>
 
       {/* Reset Section */}

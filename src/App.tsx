@@ -12,6 +12,8 @@ import { DeleteConfirmModal } from './components/DeleteConfirmModal';
 import { RecordsScreen } from './components/RecordsScreen';
 import { ProfileScreen } from './components/ProfileScreen';
 import { SettingsScreen } from './components/SettingsScreen';
+import { PWAInstallButton } from './components/PWAInstallButton';
+import { OfflineIndicator } from './components/OfflineIndicator';
 import {
   Plus,
   Target,
@@ -279,6 +281,9 @@ export function App() {
             {/* SCREEN CONTENTS */}
             {activeScreen === 'dashboard' && (
               <main id="dashboard-content" className="flex-1 px-1 py-3 overflow-y-auto pb-36">
+                {/* PWA Install Banner */}
+                <PWAInstallButton variant="banner" darkMode={settings.darkMode} />
+
                 {/* Summary Banner */}
                 <div
                   className={`mb-3 rounded-3xl p-5 shadow-sm border ${
@@ -544,6 +549,9 @@ export function App() {
             darkMode={settings.darkMode}
           />
         )}
+
+        {/* Offline Connectivity Indicator */}
+        <OfflineIndicator />
       </div>
     </div>
   );

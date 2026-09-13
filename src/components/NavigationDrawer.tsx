@@ -12,6 +12,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import { formatCurrency } from '../utils/calculations';
+import { PWAInstallButton } from './PWAInstallButton';
 
 interface NavigationDrawerProps {
   isOpen: boolean;
@@ -125,6 +126,11 @@ export const NavigationDrawer: React.FC<NavigationDrawerProps> = ({
             );
           })}
         </nav>
+
+        {/* Install App Button */}
+        <div className="px-3 pb-3">
+          <PWAInstallButton variant="drawer" />
+        </div>
 
         {/* Drawer Footer */}
         <div className="border-t border-white/10 p-4">

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Menu, ArrowLeft, Edit3, Sun, Moon, Sparkles } from 'lucide-react';
+import { Menu, ArrowLeft, Edit3, Sun, Moon } from 'lucide-react';
+import { PWAInstallButton } from './PWAInstallButton';
 
 interface HeaderProps {
   title: string;
@@ -62,7 +63,8 @@ export const Header: React.FC<HeaderProps> = ({
         </h1>
 
         {/* Right Action */}
-        <div className="flex items-center space-x-1">
+        <div className="flex items-center space-x-1.5">
+          {!isPortfolio && <PWAInstallButton variant="header" darkMode={darkMode} />}
           {isPortfolio && onEditClick ? (
             <button
               id="header-edit-goal-btn"
